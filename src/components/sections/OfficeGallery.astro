@@ -1,0 +1,48 @@
+---
+import { officeGallery } from '../../data/site';
+---
+
+<section id="office" class="section-padding bg-cream-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="reveal section-label mb-4">Our Office</p>
+      <h2 class="reveal reveal-delay-1 section-title text-balance mx-auto mb-6">
+        Step Inside Before You Arrive
+      </h2>
+      <p class="reveal reveal-delay-2 section-subtitle mx-auto">
+        A bright, welcoming space designed for your comfort. Take a look around our clinic.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+      {
+        officeGallery.map((src, i) => (
+          <div
+            class={`gallery-item reveal relative rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer group ${['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3'][i % 3]} ${i === 0 ? 'col-span-2 row-span-2' : ''}`}
+          >
+            <img
+              src={src}
+              alt={`Montezuma Dental office photo ${i + 1}`}
+              class={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${i === 0 ? 'aspect-[16/10]' : 'aspect-square'}`}
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-300 flex items-center justify-center">
+              <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+              </svg>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="fixed inset-0 z-[100] bg-charcoal/90 hidden items-center justify-center p-4">
+  <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-amber-light transition-colors" aria-label="Close lightbox">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] rounded-2xl object-contain" />
+</div>

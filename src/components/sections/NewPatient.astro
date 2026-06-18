@@ -1,0 +1,43 @@
+---
+import { newPatientSteps } from '../../data/site';
+---
+
+<section id="new-patient" class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="reveal section-label mb-4">New Patients</p>
+      <h2 class="reveal reveal-delay-1 section-title text-balance mx-auto mb-6">
+        Your New Patient Experience
+      </h2>
+      <p class="reveal reveal-delay-2 section-subtitle mx-auto">
+        From your first call to your healthiest smile—we'll guide you every step of the way.
+      </p>
+    </div>
+
+    <div class="relative">
+      <div class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-sage-100"></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        {
+          newPatientSteps.map((step, i) => (
+            <div class={`reveal relative text-center group ${['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'reveal-delay-4', 'reveal-delay-4'][i]}`}>
+              <div class="relative z-10 w-24 h-24 mx-auto mb-6 rounded-full bg-sage-500 text-white flex items-center justify-center shadow-card group-hover:bg-sage-600 group-hover:scale-105 transition-all duration-300">
+                <span class="font-display text-3xl">{step.step}</span>
+              </div>
+              <h3 class="font-display text-lg text-charcoal mb-2">{step.title}</h3>
+              <p class="text-charcoal-muted text-sm leading-relaxed">{step.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="reveal mt-16 bg-cream-50 rounded-4xl p-8 md:p-12 text-center">
+      <p class="text-charcoal-muted mb-2 text-sm">First visit lasts approximately 60 minutes</p>
+      <p class="font-display text-xl text-charcoal mb-6">
+        Early childhood visits (age 5 and under) are 30–50 minutes depending on your child's needs.
+      </p>
+      <a href="#contact" class="btn-primary">Start Your Journey</a>
+    </div>
+  </div>
+</section>

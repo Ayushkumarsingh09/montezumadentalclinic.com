@@ -1,0 +1,48 @@
+<section id="comfort" class="section-padding bg-white relative">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div class="reveal relative rounded-4xl overflow-hidden shadow-elevated">
+        <img
+          src="/images/office/gallery-2.jpg"
+          alt="Comfortable dental experience at Montezuma Dental"
+          class="w-full aspect-[4/3] object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-tr from-sage-500/20 to-transparent"></div>
+      </div>
+
+      <div>
+        <p class="reveal section-label mb-4">Comfort-First Dentistry</p>
+        <h2 class="reveal reveal-delay-1 section-title text-balance mb-6">
+          What Visiting Us Feels Like
+        </h2>
+        <p class="reveal reveal-delay-2 section-subtitle mb-10">
+          We know dental visits can feel stressful. That's why everything we do is designed around your comfort—from our welcoming reception to gentle, personalized care in the chair.
+        </p>
+
+        <div class="space-y-5">
+          {
+            [
+              { title: 'Friendly Environment', desc: 'A warm, inviting space where you\'re greeted by name—not a number.' },
+              { title: 'Gentle Care', desc: 'Thoughtful treatment that respects your comfort at every step.' },
+              { title: 'Personalized Attention', desc: 'Your concerns heard, your questions answered, your plan tailored to you.' },
+              { title: 'Relaxed Experience', desc: 'Modern amenities and a calm atmosphere that puts you at ease.' },
+            ].map((item, i) => (
+              <div class={`reveal flex items-start gap-4 p-4 rounded-2xl hover:bg-cream-50 transition-colors ${['reveal-delay-3', 'reveal-delay-3', 'reveal-delay-4', 'reveal-delay-4'][i]}`}>
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-sage-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-charcoal mb-1">{item.title}</h3>
+                  <p class="text-charcoal-muted text-sm">{item.desc}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

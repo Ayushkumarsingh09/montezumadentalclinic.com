@@ -1,0 +1,43 @@
+---
+import { services } from '../../data/site';
+---
+
+<section id="services" class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="reveal section-label mb-4">Our Services</p>
+      <h2 class="reveal reveal-delay-1 section-title text-balance mx-auto mb-6">
+        Care That Goes Beyond Procedures
+      </h2>
+      <p class="reveal reveal-delay-2 section-subtitle mx-auto">
+        We focus on outcomes—not procedures. Here's how we help you and your family smile with confidence.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        services.map((service, i) => (
+          <div
+            class={`reveal group relative bg-cream-50 rounded-3xl p-8 hover:bg-sage-50 transition-all duration-500 border border-transparent hover:border-sage-200 ${['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3'][i % 3]}`}
+          >
+            <p class="text-amber-warm font-semibold text-sm uppercase tracking-wider mb-2">{service.outcome}</p>
+            <h3 class="font-display text-2xl text-charcoal mb-4 group-hover:text-sage-600 transition-colors">
+              {service.title}
+            </h3>
+            <p class="text-charcoal-muted text-sm leading-relaxed">{service.description}</p>
+            <div class="mt-6 flex items-center gap-2 text-sage-500 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>Learn more</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="reveal text-center mt-12">
+      <a href="#contact" class="btn-primary">Schedule Your Visit</a>
+    </div>
+  </div>
+</section>

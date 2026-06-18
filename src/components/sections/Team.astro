@@ -1,0 +1,45 @@
+---
+import { team } from '../../data/site';
+---
+
+<section id="team" class="section-padding bg-white relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-sage-50 rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/2"></div>
+
+  <div class="max-w-7xl mx-auto relative">
+    <div class="text-center mb-16">
+      <p class="reveal section-label mb-4">Our Team</p>
+      <h2 class="reveal reveal-delay-1 section-title text-balance mx-auto mb-6">
+        Meet Your Dental Team
+      </h2>
+      <p class="reveal reveal-delay-2 section-subtitle mx-auto">
+        The friendly faces behind every smile. Get to know the people who make Montezuma Dental feel like home.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {
+        team.map((member, i) => (
+          <div
+            class={`reveal team-card group cursor-pointer bg-cream-50 rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-card ${['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'reveal-delay-4'][i % 4]}`}
+          >
+            <div class="aspect-[4/5] overflow-hidden">
+              <img
+                src={member.image}
+                alt={member.name}
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                width="400"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl text-charcoal mb-1">{member.name}</h3>
+              <p class="text-sage-500 text-sm font-semibold mb-3">{member.role}</p>
+              <p class="text-charcoal-muted text-sm leading-relaxed">{member.bio}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,78 @@
+---
+---
+
+<section id="difference" class="section-padding bg-sage-700 text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <img src="/images/office/hero-2.jpg" alt="" class="w-full h-full object-cover" loading="lazy" />
+  </div>
+
+  <div class="max-w-7xl mx-auto relative">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+        <p class="reveal text-amber-light font-semibold text-sm uppercase tracking-[0.2em] mb-4">
+          The Montezuma Difference
+        </p>
+        <h2 class="reveal reveal-delay-1 font-display text-3xl md:text-4xl lg:text-5xl leading-tight mb-8 text-balance">
+          Dentistry Built on Relationships, Not Routines
+        </h2>
+        <div class="space-y-6">
+          {
+            [
+              {
+                title: 'Personalized Treatment',
+                text: 'We believe in creating a comfortable and welcoming environment. Our focus is on delivering personalized care to address your unique dental needs and concerns.',
+              },
+              {
+                title: 'Comfortable Environment',
+                text: 'From the moment you walk in, you\'ll feel the difference—a warm, inviting space designed to put you at ease, not on edge.',
+              },
+              {
+                title: 'Local Relationships',
+                text: 'We\'re not a corporate chain. We\'re your neighbors, invested in the health and happiness of every family in our community.',
+              },
+              {
+                title: 'Modern Care, Small-Town Values',
+                text: 'Digital scans, advanced techniques, and the highest quality dental care—delivered with the heart and hospitality Montezuma is known for.',
+              },
+            ].map((item, i) => (
+              <div class={`reveal flex gap-4 ${['reveal-delay-2', 'reveal-delay-3', 'reveal-delay-4', 'reveal-delay-4'][i]}`}>
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-amber-warm/20 flex items-center justify-center mt-1">
+                  <div class="w-2 h-2 rounded-full bg-amber-light"></div>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg mb-1">{item.title}</h3>
+                  <p class="text-white/75 text-sm leading-relaxed">{item.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="reveal relative">
+        <div class="relative rounded-4xl overflow-hidden shadow-elevated">
+          <img
+            src="/images/office/gallery-1.jpg"
+            alt="Montezuma Dental team providing personalized care"
+            class="w-full aspect-[4/5] object-cover"
+            width="600"
+            height="750"
+            loading="lazy"
+          />
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-amber-warm rounded-2xl p-6 shadow-elevated max-w-[200px] hidden md:block">
+          <p class="font-display text-3xl text-white mb-1">100%</p>
+          <p class="text-white/80 text-sm">Committed to your comfort & care</p>
+        </div>
+        <div class="absolute -top-4 -right-4 bg-white rounded-2xl p-5 shadow-card hidden md:block">
+          <p class="text-sage-500 font-semibold text-sm">Community Trusted</p>
+          <p class="text-charcoal font-display text-lg">Montezuma, Iowa</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative h-16 bg-sage-700">
+  <div class="absolute bottom-0 left-0 right-0 h-16 bg-cream-50 curve-top"></div>
+</section>
